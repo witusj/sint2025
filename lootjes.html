@@ -1,497 +1,573 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>Sinterklaas Lootjes</title>
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Custom Styles -->
-    <style>
-      :root {
-        --sint-red: #C41E3A;
-        --sint-red-dark: #A01728;
-        --sint-gold: #D4AF37;
-        --sint-gold-dark: #B8941F;
-        --sint-cream: #FFF8E7;
-        --sint-beige: #F5E6D3;
-        --sint-brown: #8B4513;
-      }
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sinterklaas Lootjes</title>
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+			crossorigin="anonymous"
+		/>
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans:wght@400;600&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Custom Styles -->
+		<style>
+			:root {
+				--sint-red: #c41e3a;
+				--sint-red-dark: #a01728;
+				--sint-gold: #d4af37;
+				--sint-gold-dark: #b8941f;
+				--sint-cream: #fff8e7;
+				--sint-beige: #f5e6d3;
+				--sint-brown: #8b4513;
+			}
 
-      body {
-        background: linear-gradient(135deg, var(--sint-cream) 0%, var(--sint-beige) 100%);
-        font-family: 'Open Sans', sans-serif;
-        line-height: 1.6;
-        min-height: 100vh;
-      }
+			body {
+				background: linear-gradient(
+					135deg,
+					var(--sint-cream) 0%,
+					var(--sint-beige) 100%
+				);
+				font-family: "Open Sans", sans-serif;
+				line-height: 1.6;
+				min-height: 100vh;
+			}
 
-      h1, h2, h3 {
-        font-family: 'Playfair Display', serif;
-      }
+			h1,
+			h2,
+			h3 {
+				font-family: "Playfair Display", serif;
+			}
 
-      h1 {
-        color: var(--sint-red);
-        text-shadow: 2px 2px 4px rgba(212, 175, 55, 0.3);
-        font-size: 2.5rem;
-        font-weight: 700;
-      }
+			h1 {
+				color: var(--sint-red);
+				text-shadow: 2px 2px 4px rgba(212, 175, 55, 0.3);
+				font-size: 2.5rem;
+				font-weight: 700;
+			}
 
-      h2 {
-        color: var(--sint-gold-dark);
-        letter-spacing: 0.5px;
-      }
+			h2 {
+				color: var(--sint-gold-dark);
+				letter-spacing: 0.5px;
+			}
 
-      .lead {
-        font-size: 1.2rem;
-        line-height: 1.7;
-      }
+			.lead {
+				font-size: 1.2rem;
+				line-height: 1.7;
+			}
 
-      .container {
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 1.5rem;
-        padding: 2rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 8px 32px rgba(139, 69, 19, 0.15);
-      }
+			.container {
+				background: rgba(255, 255, 255, 0.9);
+				border-radius: 1.5rem;
+				padding: 2rem;
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+				box-shadow: 0 8px 32px rgba(139, 69, 19, 0.15);
+			}
 
-      .img-fluid {
-        border-radius: 1rem;
-        box-shadow: 0 8px 24px rgba(139, 69, 19, 0.2);
-        border: 4px solid var(--sint-gold);
-        max-width: 400px;
-      }
+			.img-fluid {
+				border-radius: 1rem;
+				box-shadow: 0 8px 24px rgba(139, 69, 19, 0.2);
+				border: 4px solid var(--sint-gold);
+				max-width: 400px;
+			}
 
-      .list-group-item {
-        border-left: 4px solid var(--sint-gold);
-        background-color: var(--sint-cream);
-        margin-bottom: 0.75rem;
-        border-radius: 0.5rem;
-        border-top: 1px solid rgba(212, 175, 55, 0.3);
-        border-right: 1px solid rgba(212, 175, 55, 0.3);
-        border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-      }
+			.list-group-item {
+				border-left: 4px solid var(--sint-gold);
+				background-color: var(--sint-cream);
+				margin-bottom: 0.75rem;
+				border-radius: 0.5rem;
+				border-top: 1px solid rgba(212, 175, 55, 0.3);
+				border-right: 1px solid rgba(212, 175, 55, 0.3);
+				border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+			}
 
-      .alert-warning {
-        background: linear-gradient(to right, var(--sint-cream), var(--sint-beige));
-        border-left: 5px solid var(--sint-gold);
-        border-radius: 0.75rem;
-        color: var(--sint-brown);
-        box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
-      }
+			.alert-warning {
+				background: linear-gradient(
+					to right,
+					var(--sint-cream),
+					var(--sint-beige)
+				);
+				border-left: 5px solid var(--sint-gold);
+				border-radius: 0.75rem;
+				color: var(--sint-brown);
+				box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
+			}
 
-      .name-button {
-        background: linear-gradient(135deg, var(--sint-red) 0%, var(--sint-red-dark) 100%);
-        border: 2px solid var(--sint-gold);
-        color: white;
-        font-weight: 600;
-        font-size: 1.2rem;
-        padding: 1rem 2rem;
-        border-radius: 0.75rem;
-        box-shadow: 0 4px 6px rgba(196, 30, 58, 0.2);
-        transition: all 0.3s ease;
-        width: 100%;
-      }
+			.name-button {
+				background: linear-gradient(
+					135deg,
+					var(--sint-red) 0%,
+					var(--sint-red-dark) 100%
+				);
+				border: 2px solid var(--sint-gold);
+				color: white;
+				font-weight: 600;
+				font-size: 1.2rem;
+				padding: 1rem 2rem;
+				border-radius: 0.75rem;
+				box-shadow: 0 4px 6px rgba(196, 30, 58, 0.2);
+				transition: all 0.3s ease;
+				width: 100%;
+			}
 
-      .name-button:hover {
-        background: linear-gradient(135deg, var(--sint-gold) 0%, var(--sint-gold-dark) 100%);
-        border-color: var(--sint-red);
-        color: white;
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-      }
+			.name-button:hover {
+				background: linear-gradient(
+					135deg,
+					var(--sint-gold) 0%,
+					var(--sint-gold-dark) 100%
+				);
+				border-color: var(--sint-red);
+				color: white;
+				transform: translateY(-3px);
+				box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+			}
 
-      .modal-header {
-        background: linear-gradient(135deg, var(--sint-red) 0%, var(--sint-red-dark) 100%);
-        color: var(--sint-gold);
-        border-bottom: 3px solid var(--sint-gold);
-      }
+			.modal-header {
+				background: linear-gradient(
+					135deg,
+					var(--sint-red) 0%,
+					var(--sint-red-dark) 100%
+				);
+				color: var(--sint-gold);
+				border-bottom: 3px solid var(--sint-gold);
+			}
 
-      .modal-header .btn-close {
-        filter: brightness(0) invert(1);
-      }
+			.modal-header .btn-close {
+				filter: brightness(0) invert(1);
+			}
 
-      .modal-body h2 {
-        color: var(--sint-red);
-        margin-bottom: 1.5rem;
-      }
+			.modal-body h2 {
+				color: var(--sint-red);
+				margin-bottom: 1.5rem;
+			}
 
-      .modal-body h3 {
-        color: var(--sint-red);
-        border-bottom: 2px solid var(--sint-gold);
-        padding-bottom: 0.5rem;
-        margin-top: 1.5rem;
-        margin-bottom: 1rem;
-      }
+			.modal-body h3 {
+				color: var(--sint-red);
+				border-bottom: 2px solid var(--sint-gold);
+				padding-bottom: 0.5rem;
+				margin-top: 1.5rem;
+				margin-bottom: 1rem;
+			}
 
-      .modal-body h3:first-of-type {
-        margin-top: 0;
-      }
+			.modal-body h3:first-of-type {
+				margin-top: 0;
+			}
 
-      #modalMessage {
-        background: linear-gradient(to right, var(--sint-gold), var(--sint-gold-dark));
-        color: white;
-        font-weight: 600;
-        border: none;
-        border-radius: 0.75rem;
-        padding: 1.5rem;
-        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-      }
+			#modalMessage {
+				background: linear-gradient(
+					to right,
+					var(--sint-gold),
+					var(--sint-gold-dark)
+				);
+				color: white;
+				font-weight: 600;
+				border: none;
+				border-radius: 0.75rem;
+				padding: 1.5rem;
+				box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+			}
 
-      .password-modal-backdrop {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 1055;
-        align-items: center;
-        justify-content: center;
-      }
+			.password-modal-backdrop {
+				display: none;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.5);
+				z-index: 1055;
+				align-items: center;
+				justify-content: center;
+			}
 
-      .password-modal-backdrop.show {
-        display: flex;
-      }
+			.password-modal-backdrop.show {
+				display: flex;
+			}
 
-      .password-modal-content {
-        background: white;
-        padding: 2rem;
-        border-radius: 1rem;
-        max-width: 400px;
-        width: 90%;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        border-top: 5px solid var(--sint-gold);
-      }
+			.password-modal-content {
+				background: white;
+				padding: 2rem;
+				border-radius: 1rem;
+				max-width: 400px;
+				width: 90%;
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+				border-top: 5px solid var(--sint-gold);
+			}
 
-      .password-modal-content h3 {
-        color: var(--sint-red);
-        margin-bottom: 1.5rem;
-        text-align: center;
-      }
+			.password-modal-content h3 {
+				color: var(--sint-red);
+				margin-bottom: 1.5rem;
+				text-align: center;
+			}
 
-      .password-modal-content input {
-        border: 2px solid var(--sint-gold);
-        border-radius: 0.5rem;
-        padding: 0.75rem;
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
-      }
+			.password-modal-content input {
+				border: 2px solid var(--sint-gold);
+				border-radius: 0.5rem;
+				padding: 0.75rem;
+				font-size: 1.1rem;
+				margin-bottom: 0.5rem;
+			}
 
-      .password-modal-content input:focus {
-        border-color: var(--sint-red);
-        box-shadow: 0 0 0 0.2rem rgba(196, 30, 58, 0.25);
-      }
+			.password-modal-content input:focus {
+				border-color: var(--sint-red);
+				box-shadow: 0 0 0 0.2rem rgba(196, 30, 58, 0.25);
+			}
 
-      .password-modal-content input.error {
-        border-color: var(--sint-red);
-        animation: shake 0.5s;
-      }
+			.password-modal-content input.error {
+				border-color: var(--sint-red);
+				animation: shake 0.5s;
+			}
 
-      .password-modal-content .error-message {
-        color: var(--sint-red);
-        font-size: 0.9rem;
-        margin-top: 0.5rem;
-        display: none;
-      }
+			.password-modal-content .error-message {
+				color: var(--sint-red);
+				font-size: 0.9rem;
+				margin-top: 0.5rem;
+				display: none;
+			}
 
-      .password-modal-content .error-message.show {
-        display: block;
-      }
+			.password-modal-content .error-message.show {
+				display: block;
+			}
 
-      .password-modal-content button {
-        background: linear-gradient(135deg, var(--sint-red) 0%, var(--sint-red-dark) 100%);
-        border: 2px solid var(--sint-gold);
-        color: white;
-        font-weight: 600;
-        padding: 0.75rem 2rem;
-        border-radius: 0.5rem;
-        width: 100%;
-        margin-top: 1rem;
-        transition: all 0.3s ease;
-      }
+			.password-modal-content button {
+				background: linear-gradient(
+					135deg,
+					var(--sint-red) 0%,
+					var(--sint-red-dark) 100%
+				);
+				border: 2px solid var(--sint-gold);
+				color: white;
+				font-weight: 600;
+				padding: 0.75rem 2rem;
+				border-radius: 0.5rem;
+				width: 100%;
+				margin-top: 1rem;
+				transition: all 0.3s ease;
+			}
 
-      .password-modal-content button:hover {
-        background: linear-gradient(135deg, var(--sint-gold) 0%, var(--sint-gold-dark) 100%);
-        border-color: var(--sint-red);
-      }
+			.password-modal-content button:hover {
+				background: linear-gradient(
+					135deg,
+					var(--sint-gold) 0%,
+					var(--sint-gold-dark) 100%
+				);
+				border-color: var(--sint-red);
+			}
 
-      @keyframes shake {
-        0%, 100% { transform: translateX(0); }
-        25% { transform: translateX(-10px); }
-        75% { transform: translateX(10px); }
-      }
+			@keyframes shake {
+				0%,
+				100% {
+					transform: translateX(0);
+				}
+				25% {
+					transform: translateX(-10px);
+				}
+				75% {
+					transform: translateX(10px);
+				}
+			}
 
-      @media (max-width: 768px) {
-        h1 {
-          font-size: 2rem;
-        }
+			@media (max-width: 768px) {
+				h1 {
+					font-size: 2rem;
+				}
 
-        .img-fluid {
-          max-width: 80%;
-        }
+				.img-fluid {
+					max-width: 80%;
+				}
 
-        .name-button {
-          font-size: 1rem;
-          padding: 0.75rem 1.5rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container text-center w-75 mx-auto">
-      <h1 class="mt-5">Oh nee, de loten zijn naar de k....</h1>
-      <img
-        src="sinterklaas.webp"
-        class="img-fluid m-5"
-        alt="Sinterklaas"
-        width="30%"
-      />
-      <p class="lead">
-          Op een koude decemberavond in 2025, toen de maan helder door de bomen scheen, zat Sinterklaas in zijn grote, rode leunstoel bij de knisperende haard. De Pieten renden rond als drukke mieren, maar in plaats van cadeaus in te pakken, waren ze op zoek naar het WiFi-wachtwoord. "Het altijd 'Pepernoot123' en nu werkt het niet!" mopperde Slimme Piet.
-      </p>
-      <p>
-          Sinterklaas staarde naar zijn splinternieuwe laptop, een cadeau van Slimme Piet. Hij had besloten mee te gaan met zijn tijd en het 'Sint's Super Slimme Surprise Systeem' (S5) laten ontwikkelen. Maar toen hij vandaag de website opende, verscheen er een groot rood waarschuwingsbord: <strong>"Error 404: Pakjesavond niet gevonden!"</strong> De stress begon te stijgen. "Als dit zo doorgaat, krijgt niemand zijn cadeaus op tijd!" riep hij uit.
-      </p>
-      <p>
-          Alle Pieten probeerden te helpen. Pietje Precies las de handleiding: ("Voor het geval van nood, druk op de aan-knop"), terwijl ChatGie PieT per ongeluk alle teksten in het Chinees had vertaald. Net voordat de algemene paniek het hoogtepunt bereikte, sprong de laptop tot leven en begon keihard "Jingle Bells" te spelen. "Verkeerd feest!" riep Sinterklaas wanhopig. De spanning liep zo hoog op dat zelfs de chocoladeletters begonnen te smelten.
-      </p>
-      <p>
-          Uiteindelijk kwam Brain Piet terug met een brede grijns. "Sinterklaas, u heeft Caps Lock aanstaan. Dat veroorzaakt al deze problemen." Met een simpele toetsdruk was alles weer normaal. Sinterklaas lachte opgelucht. "Misschien moet ik volgend jaar maar de cursus 'Klik en Bid: Digitaal zonder Vloeken' volgen."
-      </p>
-      <p>
-          <strong>En zo werd Pakjesavond gered, met een beetje technologie, een hoop chaos en vooral veel pret.</strong>
-      </p>
-      <hr />
-      <h2 class="mt-5">Instructies</h2>
-      <ul class="list-group">
-        <li class="list-group-item">
-          Klik hieronder op de je eigen naam, voer het wachtwoord in dat je hebt
-          gekregen (let op dat Caps Lock niet aan staat) en kijk voor wie je een cadeau mag kopen.
-        </li>
-        <li class="list-group-item">
-          Het maximum bedrag per persoon bedraagt 5 EUR.
-        </li>
-        <li class="list-group-item">
-          Het meest waardevolle is de aandacht die je de ander schenkt.
-          Bijvoorbeeld door een mooi gedicht te schrijven.
-        </li>
-      </ul>
-      <div
-        class="alert alert-warning display-6 m-5"
-        role="alert"
-      >
-        Wensen of andere belangrijke zaken kun je
-        <a
-          href="https://docs.google.com/spreadsheets/d/1qQ8EXt8XqWMFbEDqS5DA3e6Tek4v-pVdDW-YPS-WtwI/edit?usp=sharing"
-          target="_blank"
-          >hier</a
-        >
-        achterlaten.
-      </div>
-    </div>
-    <div class="row g-3 mx-auto mb-5" style="max-width: 600px;">
-      <div class="col-12 col-md-6">
-        <button
-          class="btn name-button"
-          onclick="showName('Nadia')"
-        >
-          Nadia
-        </button>
-      </div>
-      <div class="col-12 col-md-6">
-        <button
-          class="btn name-button"
-          onclick="showName('Gerrie')"
-        >
-          Gerrie
-        </button>
-      </div>
-      <div class="col-12 col-md-6">
-        <button
-          class="btn name-button"
-          onclick="showName('Jan')"
-        >
-          Jan
-        </button>
-      </div>
-      <div class="col-12 col-md-6">
-        <button
-          class="btn name-button"
-          onclick="showName('Witek')"
-        >
-          Witek
-        </button>
-      </div>
-    </div>
+				.name-button {
+					font-size: 1rem;
+					padding: 0.75rem 1.5rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container text-center w-75 mx-auto">
+			<h1 class="mt-5">Oh nee, de loten zijn naar de k....</h1>
+			<img
+				src="sinterklaas.webp"
+				class="img-fluid m-5"
+				alt="Sinterklaas"
+				width="30%"
+			/>
+			<p class="lead">
+				Op een koude decemberavond in 2025, toen de maan helder door de bomen
+				scheen, zat Sinterklaas in zijn grote, rode leunstoel bij de knisperende
+				haard. De Pieten renden rond als drukke mieren, maar in plaats van
+				cadeaus in te pakken, waren ze op zoek naar het WiFi-wachtwoord. "Het is
+				altijd 'Pepernoot123' en nu werkt het niet!" mopperde Slimme Piet.
+			</p>
+			<p>
+				Sinterklaas staarde naar zijn splinternieuwe laptop, een cadeau van
+				Slimme Piet. Hij had besloten mee te gaan met zijn tijd en het 'Sint's
+				Super Slimme Surprise Systeem' (S5) laten ontwikkelen. Maar toen hij
+				vandaag de website opende, verscheen er een groot rood
+				waarschuwingsbord:
+				<strong>"Error 404: Pakjesavond niet gevonden!"</strong> De stress begon
+				te stijgen. "Als dit zo doorgaat, krijgt niemand zijn cadeaus op tijd!"
+				riep hij uit.
+			</p>
+			<p>
+				Alle Pieten probeerden te helpen. Pietje Precies las de handleiding:
+				("Voor het geval van nood, druk op de aan-knop"), terwijl ChatGie PieT
+				per ongeluk alle teksten in het Chinees had vertaald. Net voordat de
+				algemene paniek het hoogtepunt bereikte, sprong de laptop tot leven en
+				begon keihard "Jingle Bells" te spelen. "Verkeerd feest!" riep
+				Sinterklaas wanhopig. De spanning liep zo hoog op dat zelfs de
+				chocoladeletters begonnen te smelten.
+			</p>
+			<p>
+				Uiteindelijk kwam Brain Piet terug met een brede grijns. "Sinterklaas, u
+				heeft Caps Lock aanstaan. Dat veroorzaakt al deze problemen." Met een
+				simpele toetsdruk was alles weer normaal. Sinterklaas lachte opgelucht.
+				"Misschien moet ik volgend jaar maar de cursus 'Klik en Bid: Digitaal
+				zonder Vloeken' volgen."
+			</p>
+			<p>
+				<strong
+					>En zo werd Pakjesavond gered, met een beetje technologie, een hoop
+					chaos en vooral veel pret.</strong
+				>
+			</p>
+			<hr />
+			<h2 class="mt-5">Instructies</h2>
+			<ul class="list-group">
+				<li class="list-group-item">
+					Klik hieronder op de je eigen naam, voer het wachtwoord in dat je hebt
+					gekregen (let op dat Caps Lock niet aan staat) en kijk voor wie je een
+					cadeau mag kopen.
+				</li>
+				<li class="list-group-item">
+					Het maximum bedrag per persoon bedraagt 5 EUR.
+				</li>
+				<li class="list-group-item">
+					Het meest waardevolle is de aandacht die je de ander schenkt.
+					Bijvoorbeeld door een mooi gedicht te schrijven.
+				</li>
+			</ul>
+			<div class="alert alert-warning display-6 m-5" role="alert">
+				Wensen of andere belangrijke zaken kun je
+				<a
+					href="https://docs.google.com/spreadsheets/d/1qQ8EXt8XqWMFbEDqS5DA3e6Tek4v-pVdDW-YPS-WtwI/edit?usp=sharing"
+					target="_blank"
+					>hier</a
+				>
+				achterlaten.
+			</div>
+		</div>
+		<div class="row g-3 mx-auto mb-5" style="max-width: 600px">
+			<div class="col-12 col-md-6">
+				<button class="btn name-button" onclick="showName('Nadia')">
+					Nadia
+				</button>
+			</div>
+			<div class="col-12 col-md-6">
+				<button class="btn name-button" onclick="showName('Gerrie')">
+					Gerrie
+				</button>
+			</div>
+			<div class="col-12 col-md-6">
+				<button class="btn name-button" onclick="showName('Jan')">Jan</button>
+			</div>
+			<div class="col-12 col-md-6">
+				<button class="btn name-button" onclick="showName('Witek')">
+					Witek
+				</button>
+			</div>
+		</div>
 
-    <!-- Password Modal -->
-    <div class="password-modal-backdrop" id="passwordModal">
-      <div class="password-modal-content">
-        <h3 id="passwordModalName">Welkom!</h3>
-        <input
-          type="password"
-          class="form-control"
-          id="passwordInput"
-          placeholder="Voer je wachtwoord in..."
-          autocomplete="off"
-        />
-        <small class="text-muted">💡 Let op dat Caps Lock niet aan staat</small>
-        <div class="error-message" id="errorMessage">Oeps! Probeer het nog een keer</div>
-        <button onclick="checkPassword()">Ontdek je lootje</button>
-      </div>
-    </div>
+		<!-- Password Modal -->
+		<div class="password-modal-backdrop" id="passwordModal">
+			<div class="password-modal-content">
+				<h3 id="passwordModalName">Welkom!</h3>
+				<input
+					type="password"
+					class="form-control"
+					id="passwordInput"
+					placeholder="Voer je wachtwoord in..."
+					autocomplete="off"
+				/>
+				<small class="text-muted">💡 Let op dat Caps Lock niet aan staat</small>
+				<div class="error-message" id="errorMessage">
+					Oeps! Probeer het nog een keer
+				</div>
+				<button onclick="checkPassword()">Ontdek je lootje</button>
+			</div>
+		</div>
 
-    <!-- Modal -->
-    <div
-      class="modal"
-      tabindex="-1"
-      id="SinterkerstModal"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title alert alert-info">
-              Bericht van Sinterklaas
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <h2 id="modalHeader"></h2>
-            <p>Wat fijn dat we dit jaar weer samen mogen vieren, met zoveel mooie verhalen en bijzondere momenten uit jullie levens. Sinterklaas heeft zijn grote boek er eens goed bij gepakt en wil graag een persoonlijk woordje richten aan ieder van jullie:</p>
+		<!-- Modal -->
+		<div class="modal" tabindex="-1" id="SinterkerstModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title alert alert-info">
+							Bericht van Sinterklaas
+						</h5>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="modal-body">
+						<h2 id="modalHeader"></h2>
+						<p>
+							Wat fijn dat we dit jaar weer samen mogen vieren, met zoveel mooie
+							verhalen en bijzondere momenten uit jullie levens. Sinterklaas
+							heeft zijn grote boek er eens goed bij gepakt en wil graag een
+							persoonlijk woordje richten aan ieder van jullie:
+						</p>
 
-            <h3>Lieve Nadia,</h3>
-            <p>
-                Wat een mijlpaal heb jij bereikt door af te studeren én een baan te vinden in Arnhem! Maar ik hoor dat jouw dromen richting Amsterdam gaan.
-                Sinterklaas is er zeker van dat jouw vastberadenheid je naar de plek zal brengen waar je het beste uit jezelf kunt halen.
-                Blijf dromen en werken aan je toekomst, want je bent op de goede weg!
-            </p>
+						<h3>Lieve Nadia,</h3>
+						<p>
+							Wat een mijlpaal heb jij bereikt door af te studeren én een baan
+							te vinden in Arnhem! Maar ik hoor dat jouw dromen richting
+							Amsterdam gaan. Sinterklaas is er zeker van dat jouw
+							vastberadenheid je naar de plek zal brengen waar je het beste uit
+							jezelf kunt halen. Blijf dromen en werken aan je toekomst, want je
+							bent op de goede weg!
+						</p>
 
-            <h3>Lieve Gerrie,</h3>
-            <p>
-                Wat een bewogen jaar was het voor jou en Jan.
-                Maar wat fijn om te horen dat jullie nu in rustiger vaarwater zijn beland.
-                Sinterklaas wenst jullie samen veel gezondheid en mooie momenten om van elkaar te genieten. En ga weer lekker even op pad, bijvoorbeeld om de kinderen in Engeland te bezoeken.
-            </p>
+						<h3>Lieve Gerrie,</h3>
+						<p>
+							Wat een bewogen jaar was het voor jou en Jan. Maar wat fijn om te
+							horen dat jullie nu in rustiger vaarwater zijn beland. Sinterklaas
+							wenst jullie samen veel gezondheid en mooie momenten om van elkaar
+							te genieten. En ga weer lekker even op pad, bijvoorbeeld om de
+							kinderen in Engeland te bezoeken.
+						</p>
 
-            <h3>Lieve Jan,</h3>
-            <p>
-                Wat een zorgen heb je gehad om jezelf en Gerrie dit jaar. Maar wat een geluk dat jullie nu samen weer vooruit kunnen kijken.
-                En hoe fijn is het dat je zulke bijzondere momenten kunt beleven tijdens jullie reizen naar Engeland om de kinderen te bezoeken.
-                Blijf genieten van die kostbare tijd samen met je familie.
-            </p>
+						<h3>Lieve Jan,</h3>
+						<p>
+							Wat een zorgen heb je gehad om jezelf en Gerrie dit jaar. Maar wat
+							een geluk dat jullie nu samen weer vooruit kunnen kijken. En hoe
+							fijn is het dat je zulke bijzondere momenten kunt beleven tijdens
+							jullie reizen naar Engeland om de kinderen te bezoeken. Blijf
+							genieten van die kostbare tijd samen met je familie.
+						</p>
 
-            <h3>Lieve Witek,</h3>
-            <p>
-                Een promotietraject is niet niks, met onderzoek, cursussen en je gewone werk erbij.
-                Dat vraagt om veel inzet en doorzettingsvermogen, en dat bewonder ik zeer in jou.
-                Sinterklaas weet dat jullie harde werk beloond zal worden.
-                Blijf doorzetten, want je bent op de goede weg!
-            </p>
+						<h3>Lieve Witek,</h3>
+						<p>
+							Een promotietraject is niet niks, met onderzoek, cursussen en je
+							gewone werk erbij. Dat vraagt om veel inzet en
+							doorzettingsvermogen, en dat bewonder ik zeer in jou. Sinterklaas
+							weet dat jullie harde werk beloond zal worden. Blijf doorzetten,
+							want je bent op de goede weg!
+						</p>
 
+						<h3>Lieve allemaal,</h3>
+						<p>
+							Wat een jaar vol uitdagingen, successen en mooie momenten hebben
+							jullie achter de rug. Sinterklaas is ontzettend trots op ieder van
+							jullie en wenst jullie een warme en gezellige Sinterklaasviering
+							toe, vol liefde en mooie herinneringen. Vergeet niet: in alle
+							hectiek en drukte is het samenzijn met de mensen die je liefhebt
+							het grootste cadeau.
+						</p>
 
-              <h3>Lieve allemaal,</h3>
-              <p>
-                Wat een jaar vol uitdagingen, successen en mooie momenten hebben jullie achter de rug.
-                Sinterklaas is ontzettend trots op ieder van jullie en wenst jullie een warme en gezellige Sinterklaasviering toe, vol liefde en mooie herinneringen.
-                Vergeet niet: in alle hectiek en drukte is het samenzijn met de mensen die je liefhebt het grootste cadeau.
-              </p>
+						<p>
+							Met veel warme groeten,<br />
+							<strong>Sinterklaas</strong> 🎁
+						</p>
+						<div
+							class="alert alert-warning h5"
+							role="alert"
+							id="modalMessage"
+						></div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-            <p>Met veel warme groeten,<br>
-            <strong>Sinterklaas</strong> 🎁</p>
-            <div
-              class="alert alert-warning h5"
-              role="alert"
-              id="modalMessage"
-            ></div>
-          </div>
-        </div>
-      </div>
-    </div>
+		<script>
+			let currentName = "";
+			const secretData = {
+				Nadia: { password: "UGVwZXJub3Rlbg==", secretName: "V2l0ZWs=" },
+				Gerrie: { password: "UGFhcmQ=", secretName: "TmFkaWE=" },
+				Jan: { password: "U2NoaW1tZWw=", secretName: "R2Vycmll" },
+				Witek: { password: "VGFhaXRhYWk=", secretName: "SmFu" },
+			};
 
-    <script>
-      let currentName = '';
-      const secretData = {
-        Nadia: { password: "UGVwZXJub3Rlbg==", secretName: "V2l0ZWs=" },
-        Gerrie: { password: "UGFhcmQ=", secretName: "TmFkaWE=" },
-        Jan: { password: "U2NoaW1tZWw=", secretName: "R2Vycmll" },
-        Witek: { password: "VGFhaXRhYWo=", secretName: "SmFu" },
-      };
+			function showName(name) {
+				currentName = name;
+				document.getElementById("passwordModalName").innerText =
+					"Welkom, " + name + "!";
+				document.getElementById("passwordInput").value = "";
+				document.getElementById("passwordInput").classList.remove("error");
+				document.getElementById("errorMessage").classList.remove("show");
+				document.getElementById("passwordModal").classList.add("show");
+				document.getElementById("passwordInput").focus();
+			}
 
-      function showName(name) {
-        currentName = name;
-        document.getElementById("passwordModalName").innerText = "Welkom, " + name + "!";
-        document.getElementById("passwordInput").value = "";
-        document.getElementById("passwordInput").classList.remove("error");
-        document.getElementById("errorMessage").classList.remove("show");
-        document.getElementById("passwordModal").classList.add("show");
-        document.getElementById("passwordInput").focus();
-      }
+			function checkPassword() {
+				const passwordInput = document.getElementById("passwordInput");
+				const errorMessage = document.getElementById("errorMessage");
+				const enteredPassword = btoa(passwordInput.value);
 
-      function checkPassword() {
-        const passwordInput = document.getElementById("passwordInput");
-        const errorMessage = document.getElementById("errorMessage");
-        const enteredPassword = btoa(passwordInput.value);
+				if (enteredPassword === secretData[currentName].password) {
+					// Correct password - hide password modal and show result modal
+					document.getElementById("passwordModal").classList.remove("show");
+					document.getElementById("modalHeader").innerText =
+						"Lieve familieleden,";
+					document.getElementById("modalMessage").innerText =
+						"Lieve " +
+						currentName +
+						", je hebt " +
+						atob(secretData[currentName].secretName) +
+						" getrokken!";
+					var modal = new bootstrap.Modal(
+						document.getElementById("SinterkerstModal")
+					);
+					modal.show();
+				} else {
+					// Wrong password - show error
+					passwordInput.classList.add("error");
+					errorMessage.classList.add("show");
+					setTimeout(() => {
+						passwordInput.classList.remove("error");
+					}, 500);
+				}
+			}
 
-        if (enteredPassword === secretData[currentName].password) {
-          // Correct password - hide password modal and show result modal
-          document.getElementById("passwordModal").classList.remove("show");
-          document.getElementById("modalHeader").innerText = "Lieve familieleden,";
-          document.getElementById("modalMessage").innerText =
-            "Lieve " + currentName + ", je hebt " + atob(secretData[currentName].secretName) + " getrokken!";
-          var modal = new bootstrap.Modal(document.getElementById("SinterkerstModal"));
-          modal.show();
-        } else {
-          // Wrong password - show error
-          passwordInput.classList.add("error");
-          errorMessage.classList.add("show");
-          setTimeout(() => {
-            passwordInput.classList.remove("error");
-          }, 500);
-        }
-      }
+			// Allow Enter key to submit password
+			document.addEventListener("DOMContentLoaded", function () {
+				document
+					.getElementById("passwordInput")
+					.addEventListener("keypress", function (event) {
+						if (event.key === "Enter") {
+							event.preventDefault();
+							checkPassword();
+						}
+					});
 
-      // Allow Enter key to submit password
-      document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById("passwordInput").addEventListener("keypress", function(event) {
-          if (event.key === "Enter") {
-            event.preventDefault();
-            checkPassword();
-          }
-        });
+				// Close password modal when clicking outside
+				document
+					.getElementById("passwordModal")
+					.addEventListener("click", function (event) {
+						if (event.target === this) {
+							this.classList.remove("show");
+						}
+					});
+			});
+		</script>
 
-        // Close password modal when clicking outside
-        document.getElementById("passwordModal").addEventListener("click", function(event) {
-          if (event.target === this) {
-            this.classList.remove("show");
-          }
-        });
-      });
-    </script>
-
-    <!-- Bootstrap Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+		<!-- Bootstrap Bundle with Popper -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+			crossorigin="anonymous"
+		></script>
+	</body>
 </html>
