@@ -423,64 +423,7 @@
 					</div>
 					<div class="modal-body">
 						<h2 id="modalHeader"></h2>
-						<p>
-							Wat fijn dat we dit jaar weer samen mogen vieren, met zoveel mooie
-							verhalen en bijzondere momenten uit jullie levens. Sinterklaas
-							heeft zijn grote boek er eens goed bij gepakt en wil graag een
-							persoonlijk woordje richten aan ieder van jullie:
-						</p>
-
-						<h3>Lieve Nadia,</h3>
-						<p>
-							Wat een mijlpaal heb jij bereikt door af te studeren én een baan
-							te vinden in Arnhem! Maar ik hoor dat jouw dromen richting
-							Amsterdam gaan. Sinterklaas is er zeker van dat jouw
-							vastberadenheid je naar de plek zal brengen waar je het beste uit
-							jezelf kunt halen. Blijf dromen en werken aan je toekomst, want je
-							bent op de goede weg!
-						</p>
-
-						<h3>Lieve Gerrie,</h3>
-						<p>
-							Wat een bewogen jaar was het voor jou en Jan. Maar wat fijn om te
-							horen dat jullie nu in rustiger vaarwater zijn beland. Sinterklaas
-							wenst jullie samen veel gezondheid en mooie momenten om van elkaar
-							te genieten. En ga weer lekker even op pad, bijvoorbeeld om de
-							kinderen in Engeland te bezoeken.
-						</p>
-
-						<h3>Lieve Jan,</h3>
-						<p>
-							Wat een zorgen heb je gehad om jezelf en Gerrie dit jaar. Maar wat
-							een geluk dat jullie nu samen weer vooruit kunnen kijken. En hoe
-							fijn is het dat je zulke bijzondere momenten kunt beleven tijdens
-							jullie reizen naar Engeland om de kinderen te bezoeken. Blijf
-							genieten van die kostbare tijd samen met je familie.
-						</p>
-
-						<h3>Lieve Witek,</h3>
-						<p>
-							Een promotietraject is niet niks, met onderzoek, cursussen en je
-							gewone werk erbij. Dat vraagt om veel inzet en
-							doorzettingsvermogen, en dat bewonder ik zeer in jou. Sinterklaas
-							weet dat jullie harde werk beloond zal worden. Blijf doorzetten,
-							want je bent op de goede weg!
-						</p>
-
-						<h3>Lieve allemaal,</h3>
-						<p>
-							Wat een jaar vol uitdagingen, successen en mooie momenten hebben
-							jullie achter de rug. Sinterklaas is ontzettend trots op ieder van
-							jullie en wenst jullie een warme en gezellige Sinterklaasviering
-							toe, vol liefde en mooie herinneringen. Vergeet niet: in alle
-							hectiek en drukte is het samenzijn met de mensen die je liefhebt
-							het grootste cadeau.
-						</p>
-
-						<p>
-							Met veel warme groeten,<br />
-							<strong>Sinterklaas</strong> 🎁
-						</p>
+						<div id="personalMessage"></div>
 						<div
 							class="alert alert-warning h5"
 							role="alert"
@@ -494,10 +437,38 @@
 		<script>
 			let currentName = "";
 			const secretData = {
-				Nadia: { password: "UGVwZXJub3Rlbg==", secretName: "V2l0ZWs=" },
-				Gerrie: { password: "UGFhcmQ=", secretName: "TmFkaWE=" },
-				Jan: { password: "U2NoaW1tZWw=", secretName: "R2Vycmll" },
-				Witek: { password: "VGFhaXRhYWk=", secretName: "SmFu" },
+				Nadia: {
+					password: "UGVwZXJub3Rlbg==",
+					secretName: "V2l0ZWs=",
+					message: `<p>Wat fijn dat we dit jaar weer samen mogen vieren, met zoveel mooie verhalen en bijzondere momenten uit jullie levens. Sinterklaas heeft zijn grote boek er eens goed bij gepakt en wil graag een persoonlijk woordje richten aan jou:</p>
+					<h3>Lieve Nadia,</h3>
+					<p>Wat een mijlpaal heb jij bereikt door af te studeren én een baan te vinden in Arnhem! Maar ik hoor dat jouw dromen richting Amsterdam gaan. Sinterklaas is er zeker van dat jouw vastberadenheid je naar de plek zal brengen waar je het beste uit jezelf kunt halen. Blijf dromen en werken aan je toekomst, want je bent op de goede weg!</p>
+					<p>Met veel warme groeten,<br><strong>Sinterklaas</strong> 🎁</p>`
+				},
+				Gerrie: {
+					password: "UGFhcmQ=",
+					secretName: "TmFkaWE=",
+					message: `<p>Wat fijn dat we dit jaar weer samen mogen vieren, met zoveel mooie verhalen en bijzondere momenten uit jullie levens. Sinterklaas heeft zijn grote boek er eens goed bij gepakt en wil graag een persoonlijk woordje richten aan jou:</p>
+					<h3>Lieve Gerrie,</h3>
+					<p>Wat een bewogen jaar was het voor jou en Jan. Maar wat fijn om te horen dat jullie nu in rustiger vaarwater zijn beland. Sinterklaas wenst jullie samen veel gezondheid en mooie momenten om van elkaar te genieten. En ga weer lekker even op pad, bijvoorbeeld om de kinderen in Engeland te bezoeken.</p>
+					<p>Met veel warme groeten,<br><strong>Sinterklaas</strong> 🎁</p>`
+				},
+				Jan: {
+					password: "U2NoaW1tZWw=",
+					secretName: "R2Vycmll",
+					message: `<p>Wat fijn dat we dit jaar weer samen mogen vieren, met zoveel mooie verhalen en bijzondere momenten uit jullie levens. Sinterklaas heeft zijn grote boek er eens goed bij gepakt en wil graag een persoonlijk woordje richten aan jou:</p>
+					<h3>Lieve Jan,</h3>
+					<p>Wat een zorgen heb je gehad om jezelf en Gerrie dit jaar. Maar wat een geluk dat jullie nu samen weer vooruit kunnen kijken. En hoe fijn is het dat je zulke bijzondere momenten kunt beleven tijdens jullie reizen naar Engeland om de kinderen te bezoeken. Blijf genieten van die kostbare tijd samen met je familie.</p>
+					<p>Met veel warme groeten,<br><strong>Sinterklaas</strong> 🎁</p>`
+				},
+				Witek: {
+					password: "VGFhaXRhYWk=",
+					secretName: "SmFu",
+					message: `<p>Wat fijn dat we dit jaar weer samen mogen vieren, met zoveel mooie verhalen en bijzondere momenten uit jullie levens. Sinterklaas heeft zijn grote boek er eens goed bij gepakt en wil graag een persoonlijk woordje richten aan jou:</p>
+					<h3>Lieve Witek,</h3>
+					<p>Een promotietraject is niet niks, met onderzoek, cursussen en je gewone werk erbij. Dat vraagt om veel inzet en doorzettingsvermogen, en dat bewonder ik zeer in jou. Sinterklaas weet dat jullie harde werk beloond zal worden. Blijf doorzetten, want je bent op de goede weg!</p>
+					<p>Met veel warme groeten,<br><strong>Sinterklaas</strong> 🎁</p>`
+				},
 			};
 
 			function showName(name) {
@@ -520,11 +491,11 @@
 					// Correct password - hide password modal and show result modal
 					document.getElementById("passwordModal").classList.remove("show");
 					document.getElementById("modalHeader").innerText =
-						"Lieve familieleden,";
+						"Lieve " + currentName + ",";
+					document.getElementById("personalMessage").innerHTML =
+						secretData[currentName].message;
 					document.getElementById("modalMessage").innerText =
-						"Lieve " +
-						currentName +
-						", je hebt " +
+						"Je hebt " +
 						atob(secretData[currentName].secretName) +
 						" getrokken!";
 					var modal = new bootstrap.Modal(
