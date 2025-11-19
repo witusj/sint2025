@@ -14,9 +14,245 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <style>
+      :root {
+        --sint-red: #C41E3A;
+        --sint-red-dark: #A01728;
+        --sint-gold: #D4AF37;
+        --sint-gold-dark: #B8941F;
+        --sint-cream: #FFF8E7;
+        --sint-beige: #F5E6D3;
+        --sint-brown: #8B4513;
+      }
+
+      body {
+        background: linear-gradient(135deg, var(--sint-cream) 0%, var(--sint-beige) 100%);
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+
+      h1, h2, h3 {
+        font-family: 'Playfair Display', serif;
+      }
+
+      h1 {
+        color: var(--sint-red);
+        text-shadow: 2px 2px 4px rgba(212, 175, 55, 0.3);
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+
+      h2 {
+        color: var(--sint-gold-dark);
+        letter-spacing: 0.5px;
+      }
+
+      .lead {
+        font-size: 1.2rem;
+        line-height: 1.7;
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 1.5rem;
+        padding: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 8px 32px rgba(139, 69, 19, 0.15);
+      }
+
+      .img-fluid {
+        border-radius: 1rem;
+        box-shadow: 0 8px 24px rgba(139, 69, 19, 0.2);
+        border: 4px solid var(--sint-gold);
+        max-width: 400px;
+      }
+
+      .list-group-item {
+        border-left: 4px solid var(--sint-gold);
+        background-color: var(--sint-cream);
+        margin-bottom: 0.75rem;
+        border-radius: 0.5rem;
+        border-top: 1px solid rgba(212, 175, 55, 0.3);
+        border-right: 1px solid rgba(212, 175, 55, 0.3);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      }
+
+      .alert-warning {
+        background: linear-gradient(to right, var(--sint-cream), var(--sint-beige));
+        border-left: 5px solid var(--sint-gold);
+        border-radius: 0.75rem;
+        color: var(--sint-brown);
+        box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
+      }
+
+      .name-button {
+        background: linear-gradient(135deg, var(--sint-red) 0%, var(--sint-red-dark) 100%);
+        border: 2px solid var(--sint-gold);
+        color: white;
+        font-weight: 600;
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px rgba(196, 30, 58, 0.2);
+        transition: all 0.3s ease;
+        width: 100%;
+      }
+
+      .name-button:hover {
+        background: linear-gradient(135deg, var(--sint-gold) 0%, var(--sint-gold-dark) 100%);
+        border-color: var(--sint-red);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+      }
+
+      .modal-header {
+        background: linear-gradient(135deg, var(--sint-red) 0%, var(--sint-red-dark) 100%);
+        color: var(--sint-gold);
+        border-bottom: 3px solid var(--sint-gold);
+      }
+
+      .modal-header .btn-close {
+        filter: brightness(0) invert(1);
+      }
+
+      .modal-body h2 {
+        color: var(--sint-red);
+        margin-bottom: 1.5rem;
+      }
+
+      .modal-body h3 {
+        color: var(--sint-red);
+        border-bottom: 2px solid var(--sint-gold);
+        padding-bottom: 0.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .modal-body h3:first-of-type {
+        margin-top: 0;
+      }
+
+      #modalMessage {
+        background: linear-gradient(to right, var(--sint-gold), var(--sint-gold-dark));
+        color: white;
+        font-weight: 600;
+        border: none;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+      }
+
+      .password-modal-backdrop {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1055;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .password-modal-backdrop.show {
+        display: flex;
+      }
+
+      .password-modal-content {
+        background: white;
+        padding: 2rem;
+        border-radius: 1rem;
+        max-width: 400px;
+        width: 90%;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        border-top: 5px solid var(--sint-gold);
+      }
+
+      .password-modal-content h3 {
+        color: var(--sint-red);
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      .password-modal-content input {
+        border: 2px solid var(--sint-gold);
+        border-radius: 0.5rem;
+        padding: 0.75rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .password-modal-content input:focus {
+        border-color: var(--sint-red);
+        box-shadow: 0 0 0 0.2rem rgba(196, 30, 58, 0.25);
+      }
+
+      .password-modal-content input.error {
+        border-color: var(--sint-red);
+        animation: shake 0.5s;
+      }
+
+      .password-modal-content .error-message {
+        color: var(--sint-red);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+        display: none;
+      }
+
+      .password-modal-content .error-message.show {
+        display: block;
+      }
+
+      .password-modal-content button {
+        background: linear-gradient(135deg, var(--sint-red) 0%, var(--sint-red-dark) 100%);
+        border: 2px solid var(--sint-gold);
+        color: white;
+        font-weight: 600;
+        padding: 0.75rem 2rem;
+        border-radius: 0.5rem;
+        width: 100%;
+        margin-top: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .password-modal-content button:hover {
+        background: linear-gradient(135deg, var(--sint-gold) 0%, var(--sint-gold-dark) 100%);
+        border-color: var(--sint-red);
+      }
+
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-10px); }
+        75% { transform: translateX(10px); }
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .img-fluid {
+          max-width: 80%;
+        }
+
+        .name-button {
+          font-size: 1rem;
+          padding: 0.75rem 1.5rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="container text-center vw-75">
+    <div class="container text-center w-75 mx-auto">
       <h1 class="mt-5">Oh nee, de loten zijn naar de k....</h1>
       <img
         src="sinterklaas.webp"
@@ -67,31 +303,56 @@
         achterlaten.
       </div>
     </div>
-    <div class="d-grid gap-2 col-2 mx-auto mb-5">
-      <button
-        class="btn btn-lg btn-primary name-button m-3"
-        onclick="showName('Nadia')"
-      >
-        Nadia
-      </button>
-      <button
-        class="btn btn-lg btn-primary name-button m-3"
-        onclick="showName('Gerrie')"
-      >
-        Gerrie
-      </button>
-      <button
-        class="btn btn-lg btn-primary name-button m-3"
-        onclick="showName('Jan')"
-      >
-        Jan
-      </button>
-      <button
-        class="btn btn-lg btn-primary name-button m-3"
-        onclick="showName('Witek')"
-      >
-        Witek
-      </button>
+    <div class="row g-3 mx-auto mb-5" style="max-width: 600px;">
+      <div class="col-12 col-md-6">
+        <button
+          class="btn name-button"
+          onclick="showName('Nadia')"
+        >
+          Nadia
+        </button>
+      </div>
+      <div class="col-12 col-md-6">
+        <button
+          class="btn name-button"
+          onclick="showName('Gerrie')"
+        >
+          Gerrie
+        </button>
+      </div>
+      <div class="col-12 col-md-6">
+        <button
+          class="btn name-button"
+          onclick="showName('Jan')"
+        >
+          Jan
+        </button>
+      </div>
+      <div class="col-12 col-md-6">
+        <button
+          class="btn name-button"
+          onclick="showName('Witek')"
+        >
+          Witek
+        </button>
+      </div>
+    </div>
+
+    <!-- Password Modal -->
+    <div class="password-modal-backdrop" id="passwordModal">
+      <div class="password-modal-content">
+        <h3 id="passwordModalName">Welkom!</h3>
+        <input
+          type="password"
+          class="form-control"
+          id="passwordInput"
+          placeholder="Voer je wachtwoord in..."
+          autocomplete="off"
+        />
+        <small class="text-muted">💡 Let op dat Caps Lock niet aan staat</small>
+        <div class="error-message" id="errorMessage">Oeps! Probeer het nog een keer</div>
+        <button onclick="checkPassword()">Ontdek je lootje</button>
+      </div>
     </div>
 
     <!-- Modal -->
@@ -167,29 +428,63 @@
     </div>
 
     <script>
+      let currentName = '';
+      const secretData = {
+        Nadia: { password: "UGVwZXJub3Rlbg==", secretName: "V2l0ZWs=" },
+        Gerrie: { password: "UGFhcmQ=", secretName: "TmFkaWE=" },
+        Jan: { password: "U2NoaW1tZWw=", secretName: "R2Vycmll" },
+        Witek: { password: "VGFhaXRhYWo=", secretName: "SmFu" },
+      };
+
       function showName(name) {
-        var secretData = {
-          Nadia: { password: "UGVwZXJub3Rlbg==", secretName: "V2l0ZWs=" },
-          Gerrie: { password: "UGFhcmQ=", secretName: "TmFkaWE=" },
-          Jan: { password: "U2NoaW1tZWw=", secretName: "R2Vycmll" },
-          Witek: { password: "VGFhaXRhYWo=", secretName: "SmFu" },
-        };
+        currentName = name;
+        document.getElementById("passwordModalName").innerText = "Welkom, " + name + "!";
+        document.getElementById("passwordInput").value = "";
+        document.getElementById("passwordInput").classList.remove("error");
+        document.getElementById("errorMessage").classList.remove("show");
+        document.getElementById("passwordModal").classList.add("show");
+        document.getElementById("passwordInput").focus();
+      }
 
-        var password = btoa(prompt("Voer uw wachtwoord in voor " + name));
+      function checkPassword() {
+        const passwordInput = document.getElementById("passwordInput");
+        const errorMessage = document.getElementById("errorMessage");
+        const enteredPassword = btoa(passwordInput.value);
 
-        if (password === secretData[name].password) {
-          document.getElementById("modalHeader").innerText =
-            "Lieve familieleden,";
+        if (enteredPassword === secretData[currentName].password) {
+          // Correct password - hide password modal and show result modal
+          document.getElementById("passwordModal").classList.remove("show");
+          document.getElementById("modalHeader").innerText = "Lieve familieleden,";
           document.getElementById("modalMessage").innerText =
-            "Lieve " + name + ", je hebt " + atob(secretData[name].secretName) + " getrokken!";
-          var modal = new bootstrap.Modal(
-            document.getElementById("SinterkerstModal")
-          );
+            "Lieve " + currentName + ", je hebt " + atob(secretData[currentName].secretName) + " getrokken!";
+          var modal = new bootstrap.Modal(document.getElementById("SinterkerstModal"));
           modal.show();
         } else {
-          alert("Onjuist wachtwoord!");
+          // Wrong password - show error
+          passwordInput.classList.add("error");
+          errorMessage.classList.add("show");
+          setTimeout(() => {
+            passwordInput.classList.remove("error");
+          }, 500);
         }
       }
+
+      // Allow Enter key to submit password
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById("passwordInput").addEventListener("keypress", function(event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            checkPassword();
+          }
+        });
+
+        // Close password modal when clicking outside
+        document.getElementById("passwordModal").addEventListener("click", function(event) {
+          if (event.target === this) {
+            this.classList.remove("show");
+          }
+        });
+      });
     </script>
 
     <!-- Bootstrap Bundle with Popper -->
